@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,30 +55,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKc-Pa-r1s" customClass="RecordButton" customModule="MeDub" customModuleProvider="target">
-                                <rect key="frame" x="157" y="587" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.85882352939999995" green="0.031372549020000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9T-bG-7cF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="427"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="6wz-LG-ied"/>
-                                    <constraint firstAttribute="height" constant="60" id="URK-3Y-g5d"/>
+                                    <constraint firstAttribute="height" constant="213" id="eJ7-R1-Gfm"/>
+                                    <constraint firstAttribute="width" constant="375" id="wqu-fP-PXi"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="recordButtonPressed:" destination="bDB-0P-OF4" eventType="touchUpInside" id="oal-8Q-qFv"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jBo-wh-rjP" firstAttribute="top" secondItem="MKc-Pa-r1s" secondAttribute="bottom" constant="20" id="8f6-Di-Pj4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MKc-Pa-r1s" secondAttribute="trailing" constant="142" id="daI-DM-lgt"/>
+                            <constraint firstAttribute="trailing" secondItem="T9T-bG-7cF" secondAttribute="trailing" id="F11-hz-QcA"/>
+                            <constraint firstItem="T9T-bG-7cF" firstAttribute="top" secondItem="oPF-yk-shv" secondAttribute="bottom" id="GJS-zq-fSX"/>
+                            <constraint firstItem="T9T-bG-7cF" firstAttribute="leading" secondItem="aLk-bn-osH" secondAttribute="leading" id="byp-p8-IGL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nFq-Ag-0tV"/>
+                    <connections>
+                        <outlet property="progressBar" destination="T9T-bG-7cF" id="oAF-Y5-dHs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tX3-Ip-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

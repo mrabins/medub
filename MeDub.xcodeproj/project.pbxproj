@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132683651ED0AD9D009D6901 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 132683641ED0AD9D009D6901 /* Todo */; };
 		13E750E61ECF9B9D0080801C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E750E51ECF9B9D0080801C /* AppDelegate.swift */; };
 		13E750E81ECF9B9D0080801C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E750E71ECF9B9D0080801C /* ViewController.swift */; };
 		13E750EB1ECF9B9D0080801C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E750E91ECF9B9D0080801C /* Main.storyboard */; };
@@ -15,10 +16,10 @@
 		13E750FC1ECF9D7F0080801C /* quote.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E750FB1ECF9D7F0080801C /* quote.json */; };
 		13E750FF1ECF9E3C0080801C /* AudioDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */; };
 		13E751071ED010FD0080801C /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E751061ED010FD0080801C /* RecordingViewController.swift */; };
-		13E751091ED018770080801C /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E751081ED018770080801C /* RecordButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		132683641ED0AD9D009D6901 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		13E750E21ECF9B9D0080801C /* MeDub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeDub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E750E51ECF9B9D0080801C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13E750E71ECF9B9D0080801C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		13E750FB1ECF9D7F0080801C /* quote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quote.json; sourceTree = "<group>"; };
 		13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataModel.swift; sourceTree = "<group>"; };
 		13E751061ED010FD0080801C /* RecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
-		13E751081ED018770080801C /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				13E750E91ECF9B9D0080801C /* Main.storyboard */,
-				13E751081ED018770080801C /* RecordButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -104,6 +103,7 @@
 				13E750FB1ECF9D7F0080801C /* quote.json */,
 				13E750E51ECF9B9D0080801C /* AppDelegate.swift */,
 				13E750F11ECF9B9D0080801C /* Info.plist */,
+				132683641ED0AD9D009D6901 /* Todo */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -172,6 +172,7 @@
 				13E750F01ECF9B9D0080801C /* LaunchScreen.storyboard in Resources */,
 				13E750ED1ECF9B9D0080801C /* Assets.xcassets in Resources */,
 				13E750EB1ECF9B9D0080801C /* Main.storyboard in Resources */,
+				132683651ED0AD9D009D6901 /* Todo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +187,6 @@
 				13E750FF1ECF9E3C0080801C /* AudioDataModel.swift in Sources */,
 				13E750E81ECF9B9D0080801C /* ViewController.swift in Sources */,
 				13E750E61ECF9B9D0080801C /* AppDelegate.swift in Sources */,
-				13E751091ED018770080801C /* RecordButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +352,7 @@
 				13E750F61ECF9B9D0080801C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

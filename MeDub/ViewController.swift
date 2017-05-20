@@ -33,12 +33,9 @@ class ViewController: UIViewController {
                     }
                     if let url = audioObject["url"] as? String {
                         audioRecordingData["url"] = url as AnyObject
-
-
                     }
                     if let waveImage = audioObject["waveform_raw_data"] as? String{
                         audioRecordingData["waveImage"] = waveImage as AnyObject
-                        print("IAMADUI \(audioRecordingData)")
                     }
                 } else if let audioObject = json as? [AnyObject] {
                     // json is an array
