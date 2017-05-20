@@ -12,6 +12,8 @@
 		13E750EB1ECF9B9D0080801C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E750E91ECF9B9D0080801C /* Main.storyboard */; };
 		13E750ED1ECF9B9D0080801C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E750EC1ECF9B9D0080801C /* Assets.xcassets */; };
 		13E750F01ECF9B9D0080801C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E750EE1ECF9B9D0080801C /* LaunchScreen.storyboard */; };
+		13E750FC1ECF9D7F0080801C /* quote.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E750FB1ECF9D7F0080801C /* quote.json */; };
+		13E750FF1ECF9E3C0080801C /* AudioDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		13E750EC1ECF9B9D0080801C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13E750EF1ECF9B9D0080801C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13E750F11ECF9B9D0080801C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13E750FB1ECF9D7F0080801C /* quote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quote.json; sourceTree = "<group>"; };
+		13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,10 @@
 		13E750E41ECF9B9D0080801C /* MeDub */ = {
 			isa = PBXGroup;
 			children = (
+				13E750FD1ECF9D960080801C /* Supporting Files */,
+				13E750F71ECF9CD30080801C /* Model */,
+				13E750F91ECF9CEA0080801C /* View */,
+				13E750FA1ECF9CF10080801C /* Controller */,
 				13E750E51ECF9B9D0080801C /* AppDelegate.swift */,
 				13E750E71ECF9B9D0080801C /* ViewController.swift */,
 				13E750E91ECF9B9D0080801C /* Main.storyboard */,
@@ -62,6 +70,36 @@
 				13E750F11ECF9B9D0080801C /* Info.plist */,
 			);
 			path = MeDub;
+			sourceTree = "<group>";
+		};
+		13E750F71ECF9CD30080801C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		13E750F91ECF9CEA0080801C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		13E750FA1ECF9CF10080801C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		13E750FD1ECF9D960080801C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13E750FB1ECF9D7F0080801C /* quote.json */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E750FC1ECF9D7F0080801C /* quote.json in Resources */,
 				13E750F01ECF9B9D0080801C /* LaunchScreen.storyboard in Resources */,
 				13E750ED1ECF9B9D0080801C /* Assets.xcassets in Resources */,
 				13E750EB1ECF9B9D0080801C /* Main.storyboard in Resources */,
@@ -137,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E750FF1ECF9E3C0080801C /* AudioDataModel.swift in Sources */,
 				13E750E81ECF9B9D0080801C /* ViewController.swift in Sources */,
 				13E750E61ECF9B9D0080801C /* AppDelegate.swift in Sources */,
 			);
@@ -267,6 +307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.MeDub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -280,6 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.MeDub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
