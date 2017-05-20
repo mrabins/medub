@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var audioRecordingData = [String]()
+    var audioRecordingData = [String: AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +19,6 @@ class ViewController: UIViewController {
         
         readJson()
     }
-
-    
-    @IBAction func recordButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toRecordSegue", sender: audioRecordingData)
-    }
-    
     
     func readJson() {
         do {
@@ -34,13 +28,16 @@ class ViewController: UIViewController {
                 if let audioObject = json as? [String: AnyObject] {
                     // json is a dictionary
                     if let name = audioObject["name"] as? String {
-                        audioRecordingData.append(name)
+                        audioRecordingData["name"] = name as AnyObject
+
                     }
                     if let url = audioObject["url"] as? String {
-                        audioRecordingData.append(url)
+                        audioRecordingData["url"] = url as AnyObject
+
+
                     }
                     if let waveImage = audioObject["waveform_raw_data"] as? String{
-                        audioRecordingData.append(waveImage)
+                        audioRecordingData["waveImage"] = waveImage as AnyObject
                         print("IAMADUI \(audioRecordingData)")
                     }
                 } else if let audioObject = json as? [AnyObject] {
@@ -56,6 +53,25 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+
+    
+    @IBAction func recordButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "toRecordSegue", sender: self)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecordSegue" {
+            let navController = segue.destination as! UINavigationController
+            let vc = navController.topViewController as! RecordingViewController
+            vc.recordingData = audioRecordingData
+        }
+    }
+    
+
+    
+    
+    
 }
 
 

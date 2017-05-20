@@ -26,7 +26,7 @@
                                 <state key="normal" backgroundImage="Hasta la vista baby"/>
                                 <connections>
                                     <action selector="recordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yd4-cT-W2j"/>
-                                    <segue destination="bDB-0P-OF4" kind="show" identifier="toRecordSegue" id="Ek4-zA-g86"/>
+                                    <segue destination="mr3-Ow-FdD" kind="show" identifier="toRecordSegue" id="Ek4-zA-g86"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Recording View Controller-->
         <scene sceneID="F20-E6-NBD">
             <objects>
-                <viewController id="bDB-0P-OF4" sceneMemberID="viewController">
+                <viewController id="bDB-0P-OF4" customClass="RecordingViewController" customModule="MeDub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oPF-yk-shv"/>
                         <viewControllerLayoutGuide type="bottom" id="jBo-wh-rjP"/>
@@ -56,10 +56,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nFq-Ag-0tV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tX3-Ip-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="139"/>
+            <point key="canvasLocation" x="1775.2" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YrJ-f1-hkq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mr3-Ow-FdD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N9o-dq-S7R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bDB-0P-OF4" kind="relationship" relationship="rootViewController" id="ySN-ed-KfW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRK-KS-fKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
