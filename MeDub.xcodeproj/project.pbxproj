@@ -15,6 +15,7 @@
 		13E750FC1ECF9D7F0080801C /* quote.json in Resources */ = {isa = PBXBuildFile; fileRef = 13E750FB1ECF9D7F0080801C /* quote.json */; };
 		13E750FF1ECF9E3C0080801C /* AudioDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */; };
 		13E751071ED010FD0080801C /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E751061ED010FD0080801C /* RecordingViewController.swift */; };
+		13E751091ED018770080801C /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E751081ED018770080801C /* RecordButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		13E750FB1ECF9D7F0080801C /* quote.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quote.json; sourceTree = "<group>"; };
 		13E750FE1ECF9E3C0080801C /* AudioDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDataModel.swift; sourceTree = "<group>"; };
 		13E751061ED010FD0080801C /* RecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		13E751081ED018770080801C /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				13E750E91ECF9B9D0080801C /* Main.storyboard */,
+				13E751081ED018770080801C /* RecordButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				13E750FF1ECF9E3C0080801C /* AudioDataModel.swift in Sources */,
 				13E750E81ECF9B9D0080801C /* ViewController.swift in Sources */,
 				13E750E61ECF9B9D0080801C /* AppDelegate.swift in Sources */,
+				13E751091ED018770080801C /* RecordButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

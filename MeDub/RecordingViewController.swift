@@ -7,37 +7,53 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RecordingViewController: UIViewController {
     
     var recordingData = [String:AnyObject]()
-
+    
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         print("RECORD \(recordingData)")
         
         self.navigationItem.title = recordingData["name"] as? String
-            
+        
+        let navigationItemCustomFont = UIFont(name: "Helvetica Neue", size: 20)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: navigationItemCustomFont!]
+        
+        
         
     }
+    
+    func playAudio() {
+        let fileUrl: NSURL = NSURL(string: recordingData["url"] as! String)!
+        let soundData = NSData(contentsOf: fileUrl as URL)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(data: soundData! as Data)
+        } catch {
+            print("something bad happned")
+        }
+        audioPlayer.delegate = self as? AVAudioPlayerDelegate
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+        
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+ 
+@IBAction func recordButtonPressed(_ sender: UIButton) {
+    
+    playAudio()
+    
     }
-    */
+
 
 }
