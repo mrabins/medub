@@ -20,6 +20,7 @@ class RecordingViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var player: AVPlayer!
     let frontCameraController = UIImagePickerController()
+    var fileUrl = NSURL()
     
     @IBOutlet weak var progressBar: UIImageView!
     
@@ -36,26 +37,10 @@ class RecordingViewController: UIViewController {
         self.navigationItem.title = recordingData["name"] as? String
         let navigationItemCustomFont = UIFont(name: "Helvetica Neue", size: 20)
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: navigationItemCustomFont!]
-        
-        let imageURL = recordingData["waveImage"] as! String
-        
-        print("imageURL \(imageURL)")
-        
-        
     }
     
     func playAudio() {
-        let fileUrl = NSURL(string: recordingData["url"] as! String)!
-        
-        let url = fileUrl
-        let file = try! AVAudioFile(forReading: url as URL)
-        let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: file.fileFormat.sampleRate, channels: file.fileFormat.channelCount, interleaved: false)
-        print(file.fileFormat.channelCount)
-        let buf = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: UInt32(file.length))
-        try! file.read(into: buf)
-        
-        readFile.waveArrayOfFloatValues = Array(UnsafeBufferPointer(start: buf.floatChannelData?[0], count:Int(buf.frameLength)))
-        
+        fileUrl = NSURL(string: recordingData["url"] as! String)!
         print("FILEURL \(fileUrl)")
         
         let soundData = NSData(contentsOf: fileUrl as URL)
@@ -71,7 +56,18 @@ class RecordingViewController: UIViewController {
         audioPlayer.play()
         
     }
-
+    
+    func drawWaveFile() {
+        let url = fileUrl
+        let file = try! AVAudioFile(forReading: url as URL)
+        let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: file.fileFormat.sampleRate, channels: file.fileFormat.channelCount, interleaved: false)
+        print(file.fileFormat.channelCount)
+        let buf = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: UInt32(file.length))
+        try! file.read(into: buf)
+        
+        readFile.waveArrayOfFloatValues = Array(UnsafeBufferPointer(start: buf.floatChannelData?[0], count:Int(buf.frameLength)))
+    }
+    
     func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: protocol<UINavigationControllerDelegate, UIImagePickerControllerDelegate>) -> Bool {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) == false {
             return false
@@ -111,15 +107,7 @@ class RecordingViewController: UIViewController {
         
         do{
             try mutableCompositionVideoTrack[0].insertTimeRange(CMTimeRangeMake(kCMTimeZero, aVideoAssetTrack.timeRange.duration), of: aVideoAssetTrack, at: kCMTimeZero)
-            
-            //In my case my audio file is longer then video file so i took videoAsset duration
-            //instead of audioAsset duration
-            
             try mutableCompositionAudioTrack[0].insertTimeRange(CMTimeRangeMake(kCMTimeZero, aVideoAssetTrack.timeRange.duration), of: aAudioAssetTrack, at: kCMTimeZero)
-            
-            //Use this instead above line if your audiofile and video file's playing durations are same
-            
-            //            try mutableCompositionAudioTrack[0].insertTimeRange(CMTimeRangeMake(kCMTimeZero, aVideoAssetTrack.timeRange.duration), ofTrack: aAudioAssetTrack, atTime: kCMTimeZero)
             
         }catch{
             
@@ -146,10 +134,8 @@ class RecordingViewController: UIViewController {
                 
             case AVAssetExportSessionStatus.completed:
                 
-                //Uncomment this if u want to store your video in asset
-                
-                //let assetsLib = ALAssetsLibrary()
-                //assetsLib.writeVideoAtPathToSavedPhotosAlbum(savePathUrl, completionBlock: nil)
+                let assetsLib = ALAssetsLibrary()
+                assetsLib.writeVideoAtPath(toSavedPhotosAlbum: savePathUrl as URL!, completionBlock: nil)
                 
                 print("success")
             case  AVAssetExportSessionStatus.failed:
@@ -160,7 +146,6 @@ class RecordingViewController: UIViewController {
                 print("complete")
             }
         }
-        
         
     }
 }
@@ -218,10 +203,10 @@ extension RecordingViewController: UINavigationControllerDelegate {
         frontCameraController.allowsEditing = false
         frontCameraController.delegate = delegate
         frontCameraController.startVideoCapture()
+
+       playAudio()
         
-        if frontCameraController.videoMaximumDuration == audioDurationInSeconds {
-            self.frontCameraController.stopVideoCapture()
-        }
+        frontCameraController.cameraOverlayView = progressBar
         
         
         /*
@@ -238,9 +223,10 @@ extension RecordingViewController: UINavigationControllerDelegate {
         //        frontCameraController.videoMaximumDuration = audioDurationInSeconds
         
         
-        present(frontCameraController, animated: true, completion: frontCameraController.stopVideoCapture)
+        present(frontCameraController, animated: true, completion: nil)
         
         return true
     }
     
+
 }
