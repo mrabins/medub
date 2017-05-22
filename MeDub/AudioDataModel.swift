@@ -11,12 +11,10 @@ import Foundation
 struct RecordingInformation {
     var url: String
     var name: String
-    var waveImage: String
     
-    init(url: String, name: String, waveImage: String) {
+    init(url: String, name: String) {
         self.url = url
         self.name = name
-        self.waveImage = waveImage
     }
     
 }

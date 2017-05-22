@@ -55,25 +55,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9T-bG-7cF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="427"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="213" id="eJ7-R1-Gfm"/>
-                                    <constraint firstAttribute="width" constant="375" id="wqu-fP-PXi"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-GU-Xd8" customClass="DrawerForWaveForm" customModule="MeDub" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="108" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="T9T-bG-7cF" secondAttribute="trailing" id="F11-hz-QcA"/>
-                            <constraint firstItem="T9T-bG-7cF" firstAttribute="top" secondItem="oPF-yk-shv" secondAttribute="bottom" id="GJS-zq-fSX"/>
-                            <constraint firstItem="T9T-bG-7cF" firstAttribute="leading" secondItem="aLk-bn-osH" secondAttribute="leading" id="byp-p8-IGL"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nFq-Ag-0tV"/>
-                    <connections>
-                        <outlet property="progressBar" destination="T9T-bG-7cF" id="oAF-Y5-dHs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tX3-Ip-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
